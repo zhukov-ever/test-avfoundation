@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="v4C-9d-jO9">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpg-G3-8Vd">
+                                <rect key="frame" x="249" y="72" width="102" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1G5-1E-uGP"/>
+                                    <constraint firstAttribute="width" constant="102" id="Jaq-Id-Lzf"/>
+                                </constraints>
+                                <state key="normal" title="Start recording">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="Stop recording"/>
+                                <connections>
+                                    <action selector="toggleRecordingHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Ux-9q-a2r"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roT-sA-H8Y">
+                                <rect key="frame" x="251" y="110" width="96" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="iNk-cy-PAJ"/>
+                                    <constraint firstAttribute="width" constant="96" id="ngY-Bg-sAC"/>
+                                </constraints>
+                                <state key="normal" title="Start playing">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="Pause playing"/>
+                                <connections>
+                                    <action selector="playHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mjL-DR-XkL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="roT-sA-H8Y" secondAttribute="centerX" constant="1" id="6cp-by-dQz"/>
+                            <constraint firstItem="roT-sA-H8Y" firstAttribute="top" secondItem="qpg-G3-8Vd" secondAttribute="bottom" constant="8" id="8Mj-vB-40t"/>
+                            <constraint firstAttribute="centerX" secondItem="qpg-G3-8Vd" secondAttribute="centerX" id="OMd-vJ-C9k"/>
+                            <constraint firstItem="qpg-G3-8Vd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Ugk-3z-X7C"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="EHZ-3b-ucJ"/>
+                    <connections>
+                        <outlet property="buttonPlay" destination="roT-sA-H8Y" id="ycr-ui-9Vz"/>
+                        <outlet property="buttonToggleRecording" destination="qpg-G3-8Vd" id="IuR-fc-UGJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1114" y="389"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Glp-bQ-tvQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v4C-9d-jO9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="acr-2n-WgB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Qmg-tV-P3s"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U1d-sd-5aQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="433" y="389"/>
+        </scene>
+    </scenes>
+</document>
