@@ -24,24 +24,35 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)toggleRecordingHandler:(id)sender {
-    self.buttonToggleRecording.selected = !self.buttonToggleRecording.selected;
+- (IBAction)startStopRecordingHandler:(id)sender {
+    self.buttonStartPauseRecording.selected = !self.buttonStartPauseRecording.selected;
+    self.buttonStopRecording.enabled = YES;
     
-    if (self.buttonToggleRecording.selected)
+    if (self.buttonStartPauseRecording.selected)
     {
         [[AudioManager shared] startRecording];
     }
     else
     {
-        [[AudioManager shared] stopRecording];
+        [[AudioManager shared] pauseRecording];
     }
 }
 
-- (IBAction)playHandler:(id)sender
+- (IBAction)stopRecordingHandler:(id)sender
 {
-    self.buttonPlay.selected = !self.buttonPlay.selected;
+    self.buttonStartPauseRecording.selected = NO;
+    self.buttonStopRecording.enabled = NO;
     
-    if (self.buttonPlay.selected)
+    [[AudioManager shared] stopRecording];
+}
+
+
+- (IBAction)startStopPlayingHandler:(id)sender
+{
+    self.buttonStartPausePlaying.selected = !self.buttonStartPausePlaying.selected;
+    self.buttonStopPlaying.enabled = YES;
+    
+    if (self.buttonStartPausePlaying.selected)
     {
         [[AudioManager shared] startPlaying];
     }
@@ -49,6 +60,14 @@
     {
         [[AudioManager shared] pausePlaying];
     }
+}
+
+- (IBAction)stopPlayingHandler:(id)sender
+{
+    self.buttonStartPausePlaying.selected = NO;
+    self.buttonStopPlaying.enabled = NO;
+    
+    [[AudioManager shared] stopPlaying];
 }
 
 

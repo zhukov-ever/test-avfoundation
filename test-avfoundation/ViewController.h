@@ -8,14 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UIButton *buttonToggleRecording;
-@property (weak, nonatomic) IBOutlet UIButton *buttonPlay;
+@property (weak, nonatomic) IBOutlet UIButton *buttonStartPauseRecording;
+@property (weak, nonatomic) IBOutlet UIButton *buttonStopRecording;
+
+- (IBAction)startStopRecordingHandler:(id)sender;
+- (IBAction)stopRecordingHandler:(id)sender;
 
 
-- (IBAction)toggleRecordingHandler:(id)sender;
-- (IBAction)playHandler:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *buttonStartPausePlaying;
+@property (weak, nonatomic) IBOutlet UIButton *buttonStopPlaying;
+
+- (IBAction)startStopPlayingHandler:(id)sender;
+- (IBAction)stopPlayingHandler:(id)sender;
+
 
 
 

@@ -20,5 +20,6 @@
 
 -(void)startPlaying;
 -(void)pausePlaying;
+-(void)stopPlaying;
 
 @end

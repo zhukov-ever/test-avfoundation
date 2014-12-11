@@ -1,85 +1,136 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="v4C-9d-jO9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bku-dG-dg4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="9gZ-Cz-CCC">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="bku-dG-dg4" customClass="ViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="dzN-4A-RFJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpg-G3-8Vd">
-                                <rect key="frame" x="249" y="72" width="102" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="1G5-1E-uGP"/>
-                                    <constraint firstAttribute="width" constant="102" id="Jaq-Id-Lzf"/>
-                                </constraints>
-                                <state key="normal" title="Start recording">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" title="Stop recording"/>
-                                <connections>
-                                    <action selector="toggleRecordingHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Ux-9q-a2r"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roT-sA-H8Y">
-                                <rect key="frame" x="251" y="110" width="96" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="iNk-cy-PAJ"/>
-                                    <constraint firstAttribute="width" constant="96" id="ngY-Bg-sAC"/>
-                                </constraints>
-                                <state key="normal" title="Start playing">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" title="Pause playing"/>
-                                <connections>
-                                    <action selector="playHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mjL-DR-XkL"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="roT-sA-H8Y" secondAttribute="centerX" constant="1" id="6cp-by-dQz"/>
-                            <constraint firstItem="roT-sA-H8Y" firstAttribute="top" secondItem="qpg-G3-8Vd" secondAttribute="bottom" constant="8" id="8Mj-vB-40t"/>
-                            <constraint firstAttribute="centerX" secondItem="qpg-G3-8Vd" secondAttribute="centerX" id="OMd-vJ-C9k"/>
-                            <constraint firstItem="qpg-G3-8Vd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Ugk-3z-X7C"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="EHZ-3b-ucJ"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Record" id="iH5-Ms-GBt">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="Jzi-3L-DAl">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jzi-3L-DAl" id="ovn-CV-gQ4">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="om3-CQ-brZ">
+                                                    <rect key="frame" x="8" y="7" width="46" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="46" id="DEu-7g-Kbh"/>
+                                                        <constraint firstAttribute="height" constant="30" id="Tor-gm-WnO"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Start">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="selected" title="Pause"/>
+                                                    <connections>
+                                                        <action selector="startStopRecordingHandler:" destination="bku-dG-dg4" eventType="touchUpInside" id="PVq-A5-fO7"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NwU-XU-7N1">
+                                                    <rect key="frame" x="62" y="7" width="46" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="46" id="YvZ-J5-h6d"/>
+                                                        <constraint firstAttribute="height" constant="30" id="iCl-8i-sp8"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Stop">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="selected" title="Pause"/>
+                                                    <connections>
+                                                        <action selector="stopRecordingHandler:" destination="bku-dG-dg4" eventType="touchUpInside" id="tj9-SY-RtQ"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="om3-CQ-brZ" firstAttribute="leading" secondItem="ovn-CV-gQ4" secondAttribute="leadingMargin" id="3T8-Qo-Lw5"/>
+                                                <constraint firstItem="NwU-XU-7N1" firstAttribute="leading" secondItem="om3-CQ-brZ" secondAttribute="trailing" constant="8" id="M9g-Da-gtR"/>
+                                                <constraint firstItem="NwU-XU-7N1" firstAttribute="top" secondItem="ovn-CV-gQ4" secondAttribute="topMargin" constant="-1" id="t7Y-T3-hNq"/>
+                                                <constraint firstItem="om3-CQ-brZ" firstAttribute="top" secondItem="ovn-CV-gQ4" secondAttribute="topMargin" constant="-1" id="v7P-s3-uc3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Play" id="9K3-kZ-aD2">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="200" id="Epk-TQ-1Zr">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Epk-TQ-1Zr" id="1sB-e8-ftQ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvS-gN-e51">
+                                                    <rect key="frame" x="8" y="8" width="46" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="46" id="Hki-BR-xMJ"/>
+                                                        <constraint firstAttribute="height" constant="30" id="wSu-7g-9oY"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Start">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="selected" title="Pause"/>
+                                                    <connections>
+                                                        <action selector="startStopPlayingHandler:" destination="bku-dG-dg4" eventType="touchUpInside" id="Xcq-b9-G4f"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDk-CO-Xd8">
+                                                    <rect key="frame" x="62" y="8" width="46" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="46" id="gKb-Tm-siz"/>
+                                                        <constraint firstAttribute="height" constant="30" id="tWx-Vx-FBP"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Stop">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="selected" title="Pause"/>
+                                                    <connections>
+                                                        <action selector="stopPlayingHandler:" destination="bku-dG-dg4" eventType="touchUpInside" id="njE-fI-DaB"/>
+                                                    </connections>
+                                                </button>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Ede-Ak-RO0">
+                                                    <rect key="frame" x="6" y="46" width="588" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="0Py-5g-Fyk"/>
+                                                    </constraints>
+                                                </slider>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ede-Ak-RO0" firstAttribute="leading" secondItem="1sB-e8-ftQ" secondAttribute="leadingMargin" id="73t-kJ-olF"/>
+                                                <constraint firstItem="xvS-gN-e51" firstAttribute="leading" secondItem="1sB-e8-ftQ" secondAttribute="leadingMargin" id="Dsd-39-9QP"/>
+                                                <constraint firstItem="TDk-CO-Xd8" firstAttribute="top" secondItem="1sB-e8-ftQ" secondAttribute="topMargin" id="H0o-ff-Ox1"/>
+                                                <constraint firstItem="xvS-gN-e51" firstAttribute="top" secondItem="1sB-e8-ftQ" secondAttribute="topMargin" id="Ipa-TZ-Uxv"/>
+                                                <constraint firstItem="TDk-CO-Xd8" firstAttribute="leading" secondItem="xvS-gN-e51" secondAttribute="trailing" constant="8" id="MM5-9V-DE3"/>
+                                                <constraint firstItem="Ede-Ak-RO0" firstAttribute="trailing" secondItem="1sB-e8-ftQ" secondAttribute="trailingMargin" id="Pph-cZ-ohp"/>
+                                                <constraint firstItem="Ede-Ak-RO0" firstAttribute="top" secondItem="TDk-CO-Xd8" secondAttribute="bottom" constant="8" id="bPn-9x-wuD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="bku-dG-dg4" id="hph-YI-NSJ"/>
+                            <outlet property="delegate" destination="bku-dG-dg4" id="NHT-NB-K2g"/>
+                        </connections>
+                    </tableView>
                     <connections>
-                        <outlet property="buttonPlay" destination="roT-sA-H8Y" id="ycr-ui-9Vz"/>
-                        <outlet property="buttonToggleRecording" destination="qpg-G3-8Vd" id="IuR-fc-UGJ"/>
+                        <outlet property="buttonStartPausePlaying" destination="xvS-gN-e51" id="izs-Tj-tK5"/>
+                        <outlet property="buttonStartPauseRecording" destination="om3-CQ-brZ" id="3Da-On-oqU"/>
+                        <outlet property="buttonStopPlaying" destination="TDk-CO-Xd8" id="LZB-88-xNE"/>
+                        <outlet property="buttonStopRecording" destination="NwU-XU-7N1" id="3ue-az-LEE"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5op-v4-Per" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1114" y="389"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Glp-bQ-tvQ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v4C-9d-jO9" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="acr-2n-WgB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Qmg-tV-P3s"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U1d-sd-5aQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="433" y="389"/>
+            <point key="canvasLocation" x="1766" y="389"/>
         </scene>
     </scenes>
 </document>

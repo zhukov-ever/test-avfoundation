@@ -36,6 +36,7 @@ static AudioManager* m_shared;
     {
         [self initSession];
         [self initRecorder];
+        [self initPlayer];
     }
     return self;
 }
@@ -51,6 +52,7 @@ static AudioManager* m_shared;
 
 -(void)startRecording
 {
+    [m_recorder prepareToRecord];
     NSError* _error;
     [m_session setActive:YES error:&_error];
     [m_recorder record];
@@ -72,7 +74,6 @@ static AudioManager* m_shared;
 {
     if (!m_recorder.recording)
     {
-        [self initPlayer];
         [m_player prepareToPlay];
         [m_player play];
     }
@@ -81,6 +82,13 @@ static AudioManager* m_shared;
 -(void)pausePlaying
 {
     [m_player pause];
+}
+
+-(void)stopPlaying
+{
+    [m_player stop];
+    
+    [self initPlayer];
 }
 
 
@@ -103,13 +111,11 @@ static AudioManager* m_shared;
     [_recordSetting setValue:[NSNumber numberWithInt: 2] forKey:AVNumberOfChannelsKey];
     
     NSURL* _urlPath = [NSURL URLWithString:[self pathForFile]];
-    NSLog(@"path for audio file: %@", [self pathForFile]);
     
     NSError* _error;
     m_recorder = [[AVAudioRecorder alloc] initWithURL:_urlPath settings:_recordSetting error:&_error];
     m_recorder.delegate = self;
     m_recorder.meteringEnabled = YES;
-    [m_recorder prepareToRecord];
 }
 
 - (void) initPlayer

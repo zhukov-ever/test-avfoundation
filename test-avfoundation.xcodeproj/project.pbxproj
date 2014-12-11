@@ -183,6 +183,7 @@
 				TargetAttributes = {
 					CDAE2DFB1A34F4CC00C3747F = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = NT4L7B437Q;
 					};
 					CDAE2E141A34F4CC00C3747F = {
 						CreatedOnToolsVersion = 6.1;
