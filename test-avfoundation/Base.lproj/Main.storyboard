@@ -95,7 +95,7 @@
                                                         <action selector="stopPlayingHandler:" destination="bku-dG-dg4" eventType="touchUpInside" id="njE-fI-DaB"/>
                                                     </connections>
                                                 </button>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Ede-Ak-RO0">
+                                                <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Ede-Ak-RO0">
                                                     <rect key="frame" x="6" y="46" width="588" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="0Py-5g-Fyk"/>
@@ -126,6 +126,9 @@
                         <outlet property="buttonStartPauseRecording" destination="om3-CQ-brZ" id="3Da-On-oqU"/>
                         <outlet property="buttonStopPlaying" destination="TDk-CO-Xd8" id="LZB-88-xNE"/>
                         <outlet property="buttonStopRecording" destination="NwU-XU-7N1" id="3ue-az-LEE"/>
+                        <outlet property="cellPlayer" destination="Epk-TQ-1Zr" id="OgS-b4-6fu"/>
+                        <outlet property="cellRecorder" destination="Jzi-3L-DAl" id="9I3-O8-nBh"/>
+                        <outlet property="slider" destination="Ede-Ak-RO0" id="rjR-VY-UpJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5op-v4-Per" userLabel="First Responder" sceneMemberID="firstResponder"/>

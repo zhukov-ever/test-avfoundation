@@ -15,9 +15,18 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(finishPlayingHandler:) name:FINISH_PLAYING object:nil];
 }
+
+- (void) finishPlayingHandler:(id)sender
+{
+    [self stopPlayingHandler:nil];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -36,6 +45,9 @@
     {
         [[AudioManager shared] pauseRecording];
     }
+    
+    self.cellPlayer.userInteractionEnabled = NO;
+    self.cellPlayer.contentView.backgroundColor = [UIColor lightGrayColor];
 }
 
 - (IBAction)stopRecordingHandler:(id)sender
@@ -44,7 +56,11 @@
     self.buttonStopRecording.enabled = NO;
     
     [[AudioManager shared] stopRecording];
+    
+    self.cellPlayer.userInteractionEnabled = YES;
+    self.cellPlayer.contentView.backgroundColor = [UIColor whiteColor];
 }
+
 
 
 - (IBAction)startStopPlayingHandler:(id)sender
@@ -60,6 +76,9 @@
     {
         [[AudioManager shared] pausePlaying];
     }
+    
+    self.cellRecorder.userInteractionEnabled = NO;
+    self.cellRecorder.contentView.backgroundColor = [UIColor lightGrayColor];
 }
 
 - (IBAction)stopPlayingHandler:(id)sender
@@ -68,6 +87,9 @@
     self.buttonStopPlaying.enabled = NO;
     
     [[AudioManager shared] stopPlaying];
+    
+    self.cellRecorder.userInteractionEnabled = YES;
+    self.cellRecorder.contentView.backgroundColor = [UIColor whiteColor];
 }
 
 

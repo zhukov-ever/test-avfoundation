@@ -86,9 +86,10 @@
 		CDAE2DFE1A34F4CC00C3747F /* test-avfoundation */ = {
 			isa = PBXGroup;
 			children = (
-				CDAE2E281A34FFB700C3747F /* data */,
 				CDAE2E031A34F4CC00C3747F /* AppDelegate.h */,
 				CDAE2E041A34F4CC00C3747F /* AppDelegate.m */,
+				CDAE2E251A34FD9800C3747F /* AudioManager.h */,
+				CDAE2E261A34FD9800C3747F /* AudioManager.m */,
 				CDAE2E061A34F4CC00C3747F /* ViewController.h */,
 				CDAE2E071A34F4CC00C3747F /* ViewController.m */,
 				CDAE2E091A34F4CC00C3747F /* Main.storyboard */,
@@ -123,15 +124,6 @@
 				CDAE2E1A1A34F4CC00C3747F /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CDAE2E281A34FFB700C3747F /* data */ = {
-			isa = PBXGroup;
-			children = (
-				CDAE2E251A34FD9800C3747F /* AudioManager.h */,
-				CDAE2E261A34FD9800C3747F /* AudioManager.m */,
-			);
-			name = data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

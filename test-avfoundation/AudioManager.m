@@ -138,11 +138,12 @@ static AudioManager* m_shared;
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
 {
     NSLog(@"audioPlayerDidFinishPlaying");
+    [[NSNotificationCenter defaultCenter] postNotificationName:FINISH_PLAYING object:nil];
 }
 
 - (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error
 {
-    NSLog(@"audioPlayerDecodeErrorDidOccur");
+    NSLog(@"audioPlayerDecodeErrorDidOccur: %@", error.localizedDescription);
 }
 
 

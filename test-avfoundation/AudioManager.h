@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+static NSString* FINISH_PLAYING=@"FINISH_PLAYING";
+
 @interface AudioManager : NSObject
 
 +(AudioManager*)shared;
