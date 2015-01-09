@@ -15,6 +15,8 @@ static NSString* FINISH_PLAYING=@"FINISH_PLAYING";
 +(AudioManager*)shared;
 
 -(BOOL)isAudioFileExists;
+@property (nonatomic, readonly) float duration;
+@property (nonatomic) float currentTime;
 
 -(void)startRecording;
 -(void)pauseRecording;

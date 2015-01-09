@@ -13,7 +13,7 @@
 {
     AVAudioRecorder* m_recorder;
     AVAudioPlayer* m_player;
-    AVAudioSession *m_session;
+    AVAudioSession* m_session;
 }
 
 @end
@@ -49,12 +49,27 @@ static AudioManager* m_shared;
     return NO;
 }
 
+- (float)duration
+{
+    if (![self isAudioFileExists])
+        return 0;
+    return [m_player duration];
+}
+
+-(float)currentTime
+{
+    if (![self isAudioFileExists])
+        return 0;
+    return [m_player currentTime];
+}
+
+- (void) setCurrentTime:(float)currentTime
+{
+    m_player.currentTime = currentTime;
+}
 
 -(void)startRecording
 {
-    [m_recorder prepareToRecord];
-    NSError* _error;
-    [m_session setActive:YES error:&_error];
     [m_recorder record];
 }
 
@@ -66,17 +81,14 @@ static AudioManager* m_shared;
 -(void)stopRecording
 {
     [m_recorder stop];
-    NSError* _error;
-    [m_session setActive:NO error:&_error];
+    
+    [self initRecorder];
+    [self initPlayer];
 }
 
 -(void)startPlaying
 {
-    if (!m_recorder.recording)
-    {
-        [m_player prepareToPlay];
-        [m_player play];
-    }
+    [m_player play];
 }
 
 -(void)pausePlaying
@@ -100,6 +112,7 @@ static AudioManager* m_shared;
     m_session = [AVAudioSession sharedInstance];
     NSError* _error;
     [m_session setCategory:AVAudioSessionCategoryPlayAndRecord error:&_error];
+    
 }
 
 - (void) initRecorder
@@ -116,6 +129,7 @@ static AudioManager* m_shared;
     m_recorder = [[AVAudioRecorder alloc] initWithURL:_urlPath settings:_recordSetting error:&_error];
     m_recorder.delegate = self;
     m_recorder.meteringEnabled = YES;
+
 }
 
 - (void) initPlayer
